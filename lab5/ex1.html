@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Assignment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .task {
+            margin-bottom: 20px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="task1" class="task">
+        <h2>Task 1: Table of numbers from 5 to 15 and their squares and cubes</h2>
+        <pre id="task1Output"></pre>
+    </div>
+    <div id="task2" class="task">
+        <h2>Task 2: Input three numbers and output the largest</h2>
+        <pre id="task2Output"></pre>
+    </div>
+    <div id="task3" class="task">
+        <h2>Task 3: Sum and average of marks in an array</h2>
+        <pre id="task3Output"></pre>
+    </div>
+    <div id="task4" class="task">
+        <h2>Task 4: Check numbers divisible by 3 and 5, and sum them</h2>
+        <pre id="task4Output"></pre>
+    </div>
+
+    <script>
+        // Task 1: Table of numbers from 5 to 15 and their squares and cubes
+        function displayTable() {
+            let table = "Number | Square | Cube\n";
+            for (let i = 5; i <= 15; i++) {
+                table += `${i} | ${i * i} | ${i * i * i}\n`;
+            }
+            document.getElementById('task1Output').textContent = table;
+        }
+        displayTable();
+
+        // Task 2: Input three numbers and output the largest
+        function findLargest() {
+            let num1 = parseInt(prompt("Enter the first number:"));
+            let num2 = parseInt(prompt("Enter the second number:"));
+            let num3 = parseInt(prompt("Enter the third number:"));
+
+            let largest = Math.max(num1, num2, num3);
+            document.getElementById('task2Output').textContent = "The largest number is: " + largest;
+        }
+        findLargest();
+
+        // Task 3: Sum and average of marks in an array
+        function sumAndAverage() {
+            let marks = [78, 85, 92, 67, 88];
+            let sum = marks.reduce((total, mark) => total + mark, 0);
+            let average = sum / marks.length;
+
+            let output = "Sum of all marks: " + sum + "\n";
+            output += "Average of all marks: " + average;
+            document.getElementById('task3Output').textContent = output;
+        }
+        sumAndAverage();
+
+        // Task 4: Check numbers divisible by 3 and 5, and sum them
+        function checkDivisibility() {
+            let numbers = Array.from({ length: 100 }, (_, i) => i + 1);
+            let sum = numbers.filter(num => num % 3 === 0 && num % 5 === 0)
+                .reduce((total, num) => total + num, 0);
+            document.getElementById('task4Output').textContent = "Sum of numbers divisible by 3 and 5: " + sum;
+        }
+        checkDivisibility();
+    </script>
+</body>
+
+</html>

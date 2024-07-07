@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .btn {
+            width: 100%;
+            height: 50px;
+            font-size: 20px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            background-color: aquamarine;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #5f9ea0;
+        }
+    </style>
+    <script>
+        function reverseNumber() {
+            let num = prompt('Enter a number to reverse:');
+            if (num) {
+                let reversedNum = num.split('').reverse().join('');
+                alert(`Reversed Number: ${reversedNum}`);
+            }
+        }
+
+        function sortString() {
+            let str = prompt('Enter a string to sort:');
+            if (str) {
+                let sortedStr = str.split('').sort().join('');
+                alert(`Sorted String: ${sortedStr}`);
+            }
+        }
+
+        function checkNegativeNumber() {
+            let num = prompt('Enter a number:');
+            if (num < 0) {
+                alert('Error: Negative number entered.');
+            }
+        }
+
+        function displayOddNumbers() {
+            let num = prompt('Enter a number:');
+            if (num < 0) {
+                alert('Error: Negative number entered.');
+            } else {
+                let odds = [];
+                for (let i = 1; i <= num; i++) {
+                    if (i % 2 !== 0) {
+                        odds.push(i);
+                    }
+                }
+                alert(`Odd numbers from 1 to ${num}: ${odds.join(', ')}`);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <button class="btn" onclick="reverseNumber()">Reverse Number</button>
+        <button class="btn" onclick="sortString()">Sort String</button>
+        <button class="btn" onclick="checkNegativeNumber()">Check Negative Number</button>
+        <button class="btn" onclick="displayOddNumbers()">Display Odd Numbers</button>
+    </div>
+</body>
+
+</html>

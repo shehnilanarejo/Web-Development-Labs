@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exercise 2</title>
+    <script>
+        function displayFormData() {
+            let formData = [];
+            formData.push("Name: " + document.getElementById('name').value);
+            formData.push("Father's Name: " + document.getElementById('fatherName').value);
+            formData.push("Date of Birth: " + document.getElementById('dob').value);
+            formData.push("Age: " + document.getElementById('age').value);
+            formData.push("Nationality: " + document.getElementById('nationality').value);
+            formData.push("Sex: " + document.getElementById('sex').value);
+            formData.push("Academic Background: " + document.getElementById('academicBackground').value);
+            formData.push("Working Experience: " + document.getElementById('workingExperience').value);
+            formData.push("Professional Skills: " + document.getElementById('professionalSkills').value);
+            formData.push("Awards and Achievements: " + document.getElementById('awards').value);
+            formData.push("References: " + document.getElementById('references').value);
+
+            document.write(formData.join("<br>"));
+        }
+    </script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .container div {
+            margin-bottom: 15px;
+        }
+
+        .container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .container input[type="text"],
+        .container input[type="date"],
+        .container input[type="number"],
+        .container select,
+        .container textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .container input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form onsubmit="displayFormData(); return false;">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" />
+            </div>
+            <div>
+                <label for="fatherName">Father's Name:</label>
+                <input type="text" id="fatherName" />
+            </div>
+            <div>
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" />
+            </div>
+            <div>
+                <label for="age">Age:</label>
+                <input type="number" id="age" />
+            </div>
+            <div>
+                <label for="nationality">Nationality:</label>
+                <input type="text" id="nationality" />
+            </div>
+            <div>
+                <label for="sex">Sex:</label>
+                <select id="sex">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div>
+                <label for="academicBackground">Academic Background:</label>
+                <textarea id="academicBackground"></textarea>
+            </div>
+            <div>
+                <label for="workingExperience">Working Experience:</label>
+                <textarea id="workingExperience"></textarea>
+            </div>
+            <div>
+                <label for="professionalSkills">Professional Skills:</label>
+                <textarea id="professionalSkills"></textarea>
+            </div>
+            <div>
+                <label for="awards">Awards and Achievements:</label>
+                <textarea id="awards"></textarea>
+            </div>
+            <div>
+                <label for="references">References:</label>
+                <textarea id="references"></textarea>
+            </div>
+            <div>
+                <input type="submit" value="Submit" />
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

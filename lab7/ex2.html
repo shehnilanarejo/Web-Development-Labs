@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: #4CAF50;
+            padding: 20px 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-container h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .login-container label {
+            color: white;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .login-container input[type="submit"],
+        .login-container input[type="reset"] {
+            width: 48%;
+            padding: 10px;
+            margin: 10px 1%;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .login-container input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .login-container input[type="reset"] {
+            background-color: #f44336;
+            color: white;
+        }
+
+        #btn {
+            width: 90px;
+            height: 50px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-container">
+        <h2>Welcome To My Account Login</h2>
+        <form name="loginForm" onsubmit="return validateForm()">
+            <label for="username">Enter User Name :</label>
+            <input type="text" id="username" name="username" placeholder="Enter user name here">
+
+            <label for="password">Enter Password :</label>
+            <input type="password" id="password" name="password" placeholder="Enter Password here">
+
+            <button id="btn">Login</button>
+            <button id="btn">Reset</button>
+
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var username = document.forms["loginForm"]["username"].value;
+            var password = document.forms["loginForm"]["password"].value;
+
+            if (username == "") {
+                alert("Username must be filled out");
+                return false;
+            }
+            if (password == "") {
+                alert("Password must be filled out");
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+</body>
+
+</html>

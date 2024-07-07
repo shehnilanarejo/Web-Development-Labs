@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Categories</title>
+    <style>
+        ol {
+            counter-reset: item;
+        }
+
+        ol>li {
+            display: block;
+            margin: 10px 0;
+        }
+
+        ol>li:before {
+            content: counters(item, ".") " ";
+            counter-increment: item;
+        }
+
+        .compact-car {
+            background-color: pink;
+        }
+
+        .midsize-car {
+            background-color: blue;
+        }
+
+        .sports-car {
+            background-color: red;
+        }
+
+        .compact-car ol,
+        .midsize-car ol,
+        .sports-car ol {
+            list-style-type: upper-alpha;
+        }
+
+        .compact-car ol ol,
+        .midsize-car ol ol,
+        .sports-car ol ol {
+            list-style-type: decimal;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Car Categories</h1>
+    <ol type="I">
+        <li class="compact-car">
+            Compact
+            <ol>
+                <li>
+                    Two Door
+                    <ol>
+                        <li>Honda Civic</li>
+                        <li>Ford Fiesta</li>
+                        <li>Chevrolet Sonic</li>
+                    </ol>
+                </li>
+                <li>
+                    Four Door
+                    <ol>
+                        <li>Toyota Corolla</li>
+                        <li>Hyundai Elantra</li>
+                        <li>Volkswagen Jetta</li>
+                    </ol>
+                </li>
+            </ol>
+        </li>
+        <li class="midsize-car">
+            Midsize
+            <ol>
+                <li>
+                    Two Door
+                    <ol>
+                        <li>Chevrolet Malibu</li>
+                        <li>Honda Accord</li>
+                        <li>Ford Fusion</li>
+                    </ol>
+                </li>
+                <li>
+                    Four Door
+                    <ol>
+                        <li>Toyota Camry</li>
+                        <li>Nissan Altima</li>
+                        <li>Kia Optima</li>
+                    </ol>
+                </li>
+            </ol>
+        </li>
+        <li class="sports-car">
+            Sports
+            <ol>
+                <li>
+                    Coupe
+                    <ol>
+                        <li>Ford Mustang</li>
+                        <li>Chevrolet Camaro</li>
+                        <li>Dodge Challenger</li>
+                    </ol>
+                </li>
+                <li>
+                    Convertible
+                    <ol>
+                        <li>Mazda MX-5 Miata</li>
+                        <li>BMW Z4</li>
+                        <li>Porsche 911</li>
+                    </ol>
+                </li>
+            </ol>
+        </li>
+    </ol>
+</body>
+
+</html>

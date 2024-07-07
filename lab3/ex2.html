@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .box {
+            display: flex;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .column {
+            flex: 1;
+            padding: 10px;
+        }
+
+        .label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            width: 100px;
+        }
+
+        .input-box {
+            flex: 1;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            margin-left: 10px;
+        }
+
+        .line {
+            border-left: 1px solid #ccc;
+            height: 100%;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            background-color: rgb(179, 232, 179);
+            display: flex;
+            text-align: center;
+            justify-content: center;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="column">
+                <div class="row">
+                    <label for="last_name" class="label">Last Name</label>
+                    <input type="text" id="last_name" name="last_name" class="input-box" placeholder="Nakov">
+                </div>
+                <div class="row">
+                    <label for="first_name" class="label">First Name</label>
+                    <input type="text" id="first_name" name="first_name" class="input-box" placeholder="Svetlin">
+                </div>
+                <div class="row">
+                    <label for="address" class="label">Address</label>
+                    <input type="text" id="address" name="address" class="input-box"
+                        placeholder="17 Hristo Botev Str. floor 3, apt, 12">
+                </div>
+                <div class="row">
+                    <label for="post_city" class="label">City</label>
+                    <input type="text" id="post_city" name="post_city" class="input-box" placeholder="Kaspichan">
+                    <label for="state" class="label">State</label>
+                    <input type="text" id="state" name="state" class="input-box">
+                </div>
+
+                <div class="row">
+                    <label for="zip_code" class="label">Zip/Postal Code</label>
+                    <input type="text" id="zip_code" name="zip_code" class="input-box" placeholder="9325">
+                </div>
+                <div class="row">
+                    <label for="country" class="label">Country</label>
+                    <input type="text" id="country" name="country" class="input-box" placeholder="Bulgaria">
+                </div>
+                <div class="row">
+                    <label for="phone" class="label">Phone (country code, area code, number)</label>
+                    (+ <input type="text" id="country_code" name="country_code" placeholder="359">
+                    ) <input type="text" id="area_code" name="area_code" placeholder="88">
+                    - <input type="text" id="phone_number" name="phone_number" placeholder="8334343">
+                </div>
+
+                <div class="row">
+                    <label for="email" class="label">E-mail</label>
+                    <input type="email" id="email" name="email" class="input-box" placeholder="nakov@kaspichan.org">
+                </div>
+                <div class="row">
+                    <label class="label">Birth date</label>
+                    Month<input type="text" id="month" name="month" class="input-box" placeholder="06"
+                        style="width: 80px;"> Day<input type="text" id="day" name="day" class="input-box"
+                        placeholder="14" style="width: 60px;"> Year(4 digit)<input type="text" id="year" name="year"
+                        class="input-box" placeholder="1980" style="width: 100px;">
+                </div>
+                <div class="row">
+                    <label for="gender" class="label">Gender</label>
+                    <select id="gender" name="gender" class="input-box">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <label class="label">Starting</label>
+                    <input type="checkbox" id="spring_2006" name="starting_semester" value="spring_2006">
+                    <label for="spring_2006">Spring 2006</label>
+                    <input type="checkbox" id="summer_2006" name="starting_semester" value="summer_2006">
+                    <label for="summer_2006">Summer 2006</label>
+                </div>
+                <div class="row">
+                    <label for="question_comment" class="label">Comment/Questions</label>
+                    <textarea id="question_comment" name="question_comment" class="input-box"
+                        placeholder="Please send me more information about the lodging"></textarea>
+                </div>
+                <div class="btn">
+                    <button type="submit">Submit</button>
+                    <button type="reset" style="margin-left: 10px;" type="reset">Clear this Form</button>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="column">
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

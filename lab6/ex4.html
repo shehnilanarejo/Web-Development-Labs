@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fast Food Order</title>
+    <style>
+        .container {
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function calculateOrder() {
+            let starters = document.getElementById('starters').value;
+            let majorFoods = document.getElementById('majorFoods').value;
+            let desserts = document.getElementById('desserts').value;
+            let totalOrder = '';
+
+            if (starters) totalOrder += 'Starters: ' + starters + '\n';
+            if (majorFoods) totalOrder += 'Major Foods: ' + majorFoods + '\n';
+            if (desserts) totalOrder += 'Desserts: ' + desserts + '\n';
+
+            let totalBill = 0;
+            totalBill += (starters ? starters.split(',').length * 5 : 0);
+            totalBill += (majorFoods ? majorFoods.split(',').length * 10 : 0);
+            totalBill += (desserts ? desserts.split(',').length * 3 : 0);
+
+            // Display the order details
+            document.getElementById('orderDetails').innerText = totalOrder;
+
+            // Display the total bill
+            document.getElementById('totalBill').innerText = 'Total Bill: $' + totalBill;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Fast Food Order</h2>
+        <label for="starters">Starters (each $5, separated by commas):</label>
+        <input type="text" id="starters" name="starters"><br><br>
+
+        <label for="majorFoods">Major Foods (each $10, separated by commas):</label>
+        <input type="text" id="majorFoods" name="majorFoods"><br><br>
+
+        <label for="desserts">Desserts (each $3, separated by commas):</label>
+        <input type="text" id="desserts" name="desserts"><br><br>
+
+        <button onclick="calculateOrder()">Calculate Order</button>
+
+        <div class="result">
+            <h3>Order Details:</h3>
+            <pre id="orderDetails"></pre>
+            <h3 id="totalBill"></h3>
+        </div>
+    </div>
+</body>
+
+</html>

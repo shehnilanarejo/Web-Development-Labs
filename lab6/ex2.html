@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>First and Last Day of a Month</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: calc(100% - 44px);
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+    <script>
+        function getFirstAndLastDay() {
+            let year = document.getElementById('year').value;
+            let month = document.getElementById('month').value;
+
+            if (year && month) {
+                let firstDay = new Date(year, month - 1, 1);
+                let lastDay = new Date(year, month, 0);
+
+                document.getElementById('result').innerText = `First Day: ${firstDay.toDateString()}, Last Day: ${lastDay.toDateString()}`;
+            } else {
+                alert('Please enter both year and month.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>First and Last Day of a Given Month</h1>
+        <input type="number" id="year" placeholder="Enter year" />
+        <input type="number" id="month" placeholder="Enter month" min="1" max="12" />
+        <button onclick="getFirstAndLastDay()">Get First and Last Day</button>
+        <p id="result"></p>
+    </div>
+</body>
+</html>
